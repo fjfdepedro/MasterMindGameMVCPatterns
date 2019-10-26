@@ -48,6 +48,12 @@ public class Session {
         this.registry.reset();
     }
 
+    public void resume() {
+        this.game.clear();
+        this.state.reset();
+        this.registry.reset();
+    }
+
     public boolean isWinner() {
         return this.game.isWinner();
     }

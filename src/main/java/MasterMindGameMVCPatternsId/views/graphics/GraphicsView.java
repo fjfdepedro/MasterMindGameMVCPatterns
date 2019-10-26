@@ -18,7 +18,6 @@ public abstract class GraphicsView extends View {
 		this.gameView.interact(startController);
 	}
 
-	@Override
 	public void visit(ProposalController proposalController) {
 		this.gameView.interact(proposalController);
 	}
