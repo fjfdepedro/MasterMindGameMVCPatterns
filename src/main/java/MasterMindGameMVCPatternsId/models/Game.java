@@ -36,6 +36,24 @@ public class Game {
 		this.attempts++;
 	}
 
+	Memento createMemento() {
+		Memento memento = new Memento(this.attempts);
+		for (int i = 0; i < this.proposedCombinations.size(); i++) {
+			memento.set(this.proposedCombinations.get(i).copy(), this.results.get(i).copy());
+		}
+		return memento;
+	}
+
+	void set(Memento memento) {
+		this.attempts = memento.getAttempts();
+		this.proposedCombinations = new ArrayList<ProposedCombination>();
+		this.results = new ArrayList<Result>();
+		for (int i = 0; i < memento.getSize(); i++) {
+			this.proposedCombinations.add(memento.getProposedCombination(i).copy());
+			this.results.add(memento.getResult(i).copy());
+		}
+	}
+
 	public boolean isLooser() {
 		return this.attempts == Game.MAX_LONG;
 	}

@@ -3,22 +3,22 @@ package MasterMindGameMVCPatternsId.views.console;
 import java.util.ArrayList;
 import java.util.List;
 
+import MasterMindGameMVCPatternsId.controllers.PlayController;
 import MasterMindGameMVCPatternsId.controllers.ProposalController;
 import MasterMindGameMVCPatternsId.types.Color;
-import MasterMindGameMVCPatternsId.views.console.ColorView;
-import santaTecla.utils.WithConsoleView;
+import MasterMindGameMVCPatternsId.utils.WithConsoleView;
 import MasterMindGameMVCPatternsId.views.MessageView;
 
 class ProposedCombinationView extends WithConsoleView {
-	
-	private ProposalController proposalController;
-	
-	ProposedCombinationView(ProposalController proposalController) {
-		this.proposalController = proposalController;
+
+	private PlayController playController;
+
+	ProposedCombinationView(PlayController playController) {
+		this.playController = playController;
 	}
-	
+
 	void write(int position) {
-		for (Color color : this.proposalController.getColors(position)) {
+		for (Color color : this.playController.getColors(position)) {
 			new ColorView(color).write();
 		}
 	}

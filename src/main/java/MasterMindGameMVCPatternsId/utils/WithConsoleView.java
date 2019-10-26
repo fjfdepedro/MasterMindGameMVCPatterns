@@ -1,4 +1,4 @@
-package santaTecla.utils;
+package MasterMindGameMVCPatternsId.utils;
 
 public abstract class WithConsoleView {
 

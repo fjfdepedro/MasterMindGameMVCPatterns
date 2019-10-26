@@ -1,4 +1,4 @@
-package mastermind;
+package MasterMindGameMVCPatternsId;
 
 import MasterMindGameMVCPatternsId.views.View;
 import MasterMindGameMVCPatternsId.views.graphics.GraphicsView;

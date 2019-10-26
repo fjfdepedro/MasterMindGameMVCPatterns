@@ -1,5 +1,6 @@
-package mastermind;
+package MasterMindGameMVCPatternsId;
 
+import MasterMindGameMVCPatternsId.controllers.AcceptorController;
 import MasterMindGameMVCPatternsId.controllers.Controller;
 import MasterMindGameMVCPatternsId.controllers.Logic;
 import MasterMindGameMVCPatternsId.views.View;
@@ -18,7 +19,7 @@ public abstract class Mastermind {
 	protected abstract View createView();
 
 	protected void play() {
-		Controller controller;
+		AcceptorController controller;
 		do {
 			controller = this.logic.getController();
 			if (controller != null){

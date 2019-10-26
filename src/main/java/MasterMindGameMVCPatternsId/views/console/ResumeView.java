@@ -2,7 +2,7 @@ package MasterMindGameMVCPatternsId.views.console;
 
 import MasterMindGameMVCPatternsId.controllers.ResumeController;
 import MasterMindGameMVCPatternsId.views.MessageView;
-import santaTecla.utils.YesNoDialog;
+import MasterMindGameMVCPatternsId.utils.YesNoDialog;
 
 class ResumeView {
 

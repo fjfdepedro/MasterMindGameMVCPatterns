@@ -1,4 +1,4 @@
-package santaTecla.utils;
+package MasterMindGameMVCPatternsId.utils;
 
 public class ClosedInterval {
 

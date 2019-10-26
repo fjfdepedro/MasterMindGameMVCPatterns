@@ -5,7 +5,7 @@ import MasterMindGameMVCPatternsId.controllers.ResumeController;
 import MasterMindGameMVCPatternsId.controllers.StartController;
 import MasterMindGameMVCPatternsId.views.View;
 
-public class GraphicsView extends View {
+public abstract class GraphicsView extends View {
 
 	private GameView gameView;
 

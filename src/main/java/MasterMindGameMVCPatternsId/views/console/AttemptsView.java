@@ -1,20 +1,18 @@
 package MasterMindGameMVCPatternsId.views.console;
 
-import MasterMindGameMVCPatternsId.controllers.ProposalController;
+import MasterMindGameMVCPatternsId.controllers.PlayController;
 import MasterMindGameMVCPatternsId.views.MessageView;
-import santaTecla.utils.WithConsoleView;
 
-public class AttemptsView extends WithConsoleView {
+public class AttemptsView  {
 
-	private ProposalController proposalController;
+	private PlayController playController;
 
-	AttemptsView(ProposalController proposalController) {
-		this.proposalController = proposalController;
+	AttemptsView(PlayController proposalController) {
+		this.playController = playController;
 	}
 
 	void writeln() {
-		this.console.writeln(MessageView.ATTEMPTS.getMessage().replaceFirst("#attempts",
-				"" + this.proposalController.getAttempts()));
+		MessageView.ATTEMPTS.writeln(this.playController.getAttempts());
 	}
 
 }

@@ -1,5 +1,6 @@
 package MasterMindGameMVCPatternsId.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import MasterMindGameMVCPatternsId.types.Color;
@@ -21,6 +22,14 @@ class ProposedCombination extends Combination {
 			}
 		}
 		return false;
+	}
+
+	ProposedCombination copy() {
+		List<Color> colors = new ArrayList<Color>();
+		for(Color color: this.colors) {
+			colors.add(color);
+		}
+		return new ProposedCombination(colors);
 	}
 
 }

@@ -2,7 +2,7 @@ package MasterMindGameMVCPatternsId.views.console;
 
 import MasterMindGameMVCPatternsId.controllers.Controller;
 import MasterMindGameMVCPatternsId.views.MessageView;
-import santaTecla.utils.WithConsoleView;
+import MasterMindGameMVCPatternsId.utils.WithConsoleView;
 
 class SecretCombinationView extends WithConsoleView {
 	

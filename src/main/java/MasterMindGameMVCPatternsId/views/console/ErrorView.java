@@ -1,7 +1,7 @@
 package MasterMindGameMVCPatternsId.views.console;
 
 import MasterMindGameMVCPatternsId.types.Error;
-import santaTecla.utils.Console;
+import MasterMindGameMVCPatternsId.utils.Console;
 
 class ErrorView extends MasterMindGameMVCPatternsId.views.ErrorView {
 

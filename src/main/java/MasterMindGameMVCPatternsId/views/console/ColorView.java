@@ -1,7 +1,7 @@
 package MasterMindGameMVCPatternsId.views.console;
 
 import MasterMindGameMVCPatternsId.types.Color;
-import santaTecla.utils.Console;
+import MasterMindGameMVCPatternsId.utils.Console;
 
 class ColorView extends MasterMindGameMVCPatternsId.views.ColorView {
 

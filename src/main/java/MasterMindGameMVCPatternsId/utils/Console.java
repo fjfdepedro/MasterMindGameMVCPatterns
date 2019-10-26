@@ -1,4 +1,4 @@
-package santaTecla.utils;
+package MasterMindGameMVCPatternsId.utils;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

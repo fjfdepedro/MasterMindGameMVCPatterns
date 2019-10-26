@@ -2,7 +2,7 @@ package MasterMindGameMVCPatternsId.views.console;
 
 import MasterMindGameMVCPatternsId.controllers.StartController;
 import MasterMindGameMVCPatternsId.views.MessageView;
-import santaTecla.utils.WithConsoleView;
+import MasterMindGameMVCPatternsId.utils.WithConsoleView;
 
 class StartView extends WithConsoleView {
 	
