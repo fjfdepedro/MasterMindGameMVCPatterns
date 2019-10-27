@@ -2,10 +2,7 @@ package MasterMindGameMVCPatternsId.controllers;
 
 import java.util.List;
 
-import MasterMindGameMVCPatternsId.models.Combination;
-import MasterMindGameMVCPatternsId.models.Game;
-import MasterMindGameMVCPatternsId.models.Session;
-import MasterMindGameMVCPatternsId.models.State;
+import MasterMindGameMVCPatternsId.models.*;
 import MasterMindGameMVCPatternsId.types.Color;
 import MasterMindGameMVCPatternsId.types.Error;
 
@@ -33,36 +30,37 @@ public class ProposalController extends Controller {
 			}
 		}
 		if (error == null){
-			this.session.addProposedCombination(colors);
-			if (this.session.isWinner() || this.session.isLooser()) {
-				this.session.next();
+			((SessionImplementation) this.session).addProposedCombination(colors);
+			if (((SessionImplementation) this.session).isWinner()
+					|| ((SessionImplementation) this.session).isLooser()) {
+				((SessionImplementation) this.session).next();
 			}
 		}
 		return error;	
 	}
 
 	public boolean isWinner() {
-		return this.session.isWinner();
+		return ((SessionImplementation) this.session).isWinner();
 	}
 
 	public boolean isLooser() {
-		return this.session.isLooser();
+		return ((SessionImplementation) this.session).isLooser();
 	}
 	
 	public int getAttempts() {
-		return this.session.getAttempts();
+		return ((SessionImplementation) this.session).getAttempts();
 	}
 
 	public List<Color> getColors(int position) {
-		return this.session.getColors(position);
+		return ((SessionImplementation) this.session).getColors(position);
 	}
 
 	public int getBlacks(int position) {
-		return this.session.getBlacks(position);
+		return ((SessionImplementation) this.session).getBlacks(position);
 	}
 
 	public int getWhites(int position) {
-		return this.session.getWhites(position);
+		return ((SessionImplementation) this.session).getWhites(position);
 	}
 
 }

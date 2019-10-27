@@ -6,64 +6,34 @@ import MasterMindGameMVCPatternsId.types.Error;
 
 import java.util.List;
 
-public class PlayController extends AcceptorController {
+public abstract class PlayController extends AcceptorController {
 
-    private ProposalController proposalController;
-
-    private UndoController undoController;
-
-    private RedoController redoController;
-
-    PlayController(Session session) {
+    protected PlayController(Session session) {
         super(session);
-        this.proposalController = new ProposalController(this.session);
-        this.undoController = new UndoController(this.session);
-        this.redoController = new RedoController(this.session);
     }
 
-    public Error addProposedCombination(List<Color> colors) {
-        return this.proposalController.addProposedCombination(colors);
-    }
+    public abstract Error addProposedCombination(List<Color> colors);
 
-    public void undo() {
-        this.undoController.undo();
-    }
+    public abstract void undo();
 
-    public void redo() {
-        this.redoController.redo();
-    }
+    public abstract void redo();
 
-    public boolean undoable() {
-        return this.undoController.undoable();
-    }
+    public abstract boolean undoable();
 
-    public boolean redoable() {
-        return this.redoController.redoable();
-    }
+    public abstract boolean redoable();
 
-    public boolean isWinner() {
-        return this.proposalController.isWinner();
-    }
+    public abstract boolean isWinner();
 
-    public boolean isLooser() {
-        return this.proposalController.isLooser();
-    }
+    public abstract boolean isLooser();
 
-    public int getAttempts() {
-        return this.proposalController.getAttempts();
-    }
+    public abstract List<Color> getColors(int position);
 
-    public List<Color> getColors(int position) {
-        return this.proposalController.getColors(position);
-    }
+    public abstract int getBlacks(int position);
 
-    public int getBlacks(int position) {
-        return this.proposalController.getBlacks(position);
-    }
+    public abstract int getWhites(int position);
 
-    public int getWhites(int position) {
-        return this.proposalController.getWhites(position);
-    }
+    public abstract int getAttempts();
+
 
     @Override
     public void accept(ControllersVisitor controllersVisitor) {

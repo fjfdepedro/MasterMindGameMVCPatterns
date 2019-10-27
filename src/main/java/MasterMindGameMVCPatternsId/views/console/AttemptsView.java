@@ -13,8 +13,7 @@ public class AttemptsView  extends WithConsoleView {
 	}
 
 	void writeln() {
-		this.console.writeln(MessageView.ATTEMPTS.getMessage().replaceFirst("#attempts",
-				"" + this.playController.getAttempts()));
+		MessageView.ATTEMPTS.writeln(this.playController.getAttempts());
 	}
 
 }

@@ -1,29 +1,25 @@
 package MasterMindGameMVCPatternsId.controllers;
 
 import java.util.HashMap;
+import java.util.IdentityHashMap;
 import java.util.Map;
-
 import MasterMindGameMVCPatternsId.models.Game;
 import MasterMindGameMVCPatternsId.models.Session;
-import MasterMindGameMVCPatternsId.models.State;
 import MasterMindGameMVCPatternsId.models.StateValue;
+import MasterMindGameMVCPatternsId.utils.TCPIP;
 
 public class Logic {
 
-	private Session session;
+	protected Session session;
 
-	private Map<StateValue, AcceptorController> controllers;
-		
-	public Logic() {
-		this.session = new Session();
-		this.controllers = new HashMap<StateValue, AcceptorController>();
-		this.controllers.put(StateValue.INITIAL, new StartController(this.session));
-		this.controllers.put(StateValue.IN_GAME, new PlayController(this.session));
-		this.controllers.put(StateValue.FINAL, new ResumeController(this.session));
+	protected Map<StateValue, AcceptorController> acceptorControllers;
+
+	protected Logic () {
+		this.acceptorControllers = new HashMap<StateValue, AcceptorController>();
 	}
 
 	public AcceptorController getController() {
-		return this.controllers.get(this.session.getValueState());
+		return this.acceptorControllers.get(this.session.getValueState());
 	}
-	
+
 }

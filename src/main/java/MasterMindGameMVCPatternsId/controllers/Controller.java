@@ -2,7 +2,7 @@ package MasterMindGameMVCPatternsId.controllers;
 
 import MasterMindGameMVCPatternsId.models.Game;
 import MasterMindGameMVCPatternsId.models.Session;
-import MasterMindGameMVCPatternsId.models.State;
+import MasterMindGameMVCPatternsId.models.StateValue;
 
 public abstract class Controller {
 
@@ -14,5 +14,9 @@ public abstract class Controller {
 
 	public int getWidth() {
 		return this.session.getWidth();
+	}
+
+	public StateValue getValueState() {
+		return this.session.getValueState();
 	}
 }

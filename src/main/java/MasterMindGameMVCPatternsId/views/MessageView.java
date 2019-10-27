@@ -14,7 +14,11 @@ public enum MessageView {
 	PROPOSE_COMMAND("Propose Combination"),
 	UNDO_COMMAND("Undo previous Proposal"),
 	REDO_COMMAND("Redo previous Proposal"),
-	NEW_LINE("");
+	NEW_LINE(""),
+	NEWGAME_COMMAND("Start a new game"),
+	EXIT_COMMAND("Exit game"),
+	OPENGAME_COMMAND("Open a saved game"),
+	NAME("Name: ");
 
 	private String message;
 	private Console console;

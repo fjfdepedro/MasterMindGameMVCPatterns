@@ -1,14 +1,16 @@
 package MasterMindGameMVCPatternsId;
 
-import MasterMindGameMVCPatternsId.views.View;
+import MasterMindGameMVCPatternsId.controllers.Logic;
+import MasterMindGameMVCPatternsId.controllers.implementation.LogicImplementation;
 import MasterMindGameMVCPatternsId.views.console.ConsoleView;
 
-public class ConsoleMastermind extends Mastermind{
+public class ConsoleMastermind extends Mastermind {
 
-	protected View createView() {
-		return new ConsoleView();
+	@Override
+	protected Logic createLogic() {
+		return new LogicImplementation();
 	}
-	
+
 	public static void main(String[] args) {
 		new ConsoleMastermind().play();
 	}
