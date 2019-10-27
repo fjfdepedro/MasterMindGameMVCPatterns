@@ -7,9 +7,9 @@ import MasterMindGameMVCPatternsId.types.Color;
 import MasterMindGameMVCPatternsId.types.Error;
 import MasterMindGameMVCPatternsId.views.MessageView;
 
-class ProposeCommand extends Command {
+public class ProposeCommand extends Command {
 
-    ProposeCommand(PlayController playController) {
+    public ProposeCommand(PlayController playController) {
         super(MessageView.PROPOSE_COMMAND.getMessage(), playController);
     }
 

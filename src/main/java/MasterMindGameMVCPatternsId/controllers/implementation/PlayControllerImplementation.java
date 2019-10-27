@@ -5,6 +5,7 @@ import MasterMindGameMVCPatternsId.controllers.PlayController;
 import MasterMindGameMVCPatternsId.controllers.ProposalController;
 import MasterMindGameMVCPatternsId.controllers.RedoController;
 import MasterMindGameMVCPatternsId.controllers.UndoController;
+import MasterMindGameMVCPatternsId.controllers.ExitController;
 import MasterMindGameMVCPatternsId.models.Session;
 import MasterMindGameMVCPatternsId.types.Color;
 import MasterMindGameMVCPatternsId.types.Error;
@@ -17,11 +18,14 @@ public class PlayControllerImplementation extends PlayController {
 
     private RedoController redoController;
 
+    private ExitController exitController;
+
     PlayControllerImplementation(Session session) {
         super(session);
         this.proposalController = new ProposalController(this.session);
         this.undoController = new UndoController(this.session);
         this.redoController = new RedoController(this.session);
+        this.exitController = new ExitController(this.session);
     }
 
     @Override
@@ -68,6 +72,11 @@ public class PlayControllerImplementation extends PlayController {
     @Override
     public int getAttempts() {
         return this.proposalController.getAttempts();
+    }
+
+    @Override
+    public void next() {
+        this.exitController.next();
     }
 
     @Override

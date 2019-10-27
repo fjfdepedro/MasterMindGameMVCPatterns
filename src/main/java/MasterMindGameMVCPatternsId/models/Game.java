@@ -36,6 +36,10 @@ public class Game {
 		this.attempts++;
 	}
 
+	public void addProposedCombination(ProposedCombination proposedCombination) {
+		this.proposedCombinations.add(proposedCombination);
+	}
+
 	Memento createMemento() {
 		Memento memento = new Memento(this.attempts);
 		for (int i = 0; i < this.proposedCombinations.size(); i++) {
@@ -52,6 +56,14 @@ public class Game {
 			this.proposedCombinations.add(memento.getProposedCombination(i).copy());
 			this.results.add(memento.getResult(i).copy());
 		}
+	}
+
+	public Result getResult(int position) {
+		return this.results.get(position);
+	}
+
+	public ProposedCombination getProposedCombination(int position) {
+		return this.proposedCombinations.get(position);
 	}
 
 	public boolean isLooser() {
@@ -80,6 +92,18 @@ public class Game {
 
 	public int getWidth() {
 		return Combination.getWidth();
+	}
+
+	public SecretCombination getSecretCombination() {
+		return this.secretCombination;
+	}
+
+	public void setAttempts(int attempts) {
+		this.attempts = attempts;
+	}
+
+	public void addResult(Result result) {
+		this.results.add(result);
 	}
 
 }

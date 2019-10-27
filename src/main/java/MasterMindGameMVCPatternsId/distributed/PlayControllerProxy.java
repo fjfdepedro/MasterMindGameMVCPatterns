@@ -78,6 +78,11 @@ public class PlayControllerProxy extends PlayController {
     }
 
     @Override
+    public void next() {
+
+    }
+
+    @Override
     public int getBlacks(int position) {
         this.tcpip.send(FrameType.BLACKS.name());
         this.tcpip.send(position);

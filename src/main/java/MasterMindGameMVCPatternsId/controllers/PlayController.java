@@ -34,6 +34,8 @@ public abstract class PlayController extends AcceptorController {
 
     public abstract int getAttempts();
 
+    public abstract void next();
+
 
     @Override
     public void accept(ControllersVisitor controllersVisitor) {

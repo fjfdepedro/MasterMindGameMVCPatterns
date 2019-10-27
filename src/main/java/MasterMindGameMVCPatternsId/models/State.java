@@ -19,5 +19,6 @@ public class State {
 	public StateValue getValueState() {
 		return this.stateValue;
 	}
-	
+
+    public void setStateValue(StateValue stateValue) { this.stateValue = stateValue;}
 }

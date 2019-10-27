@@ -1,6 +1,8 @@
 package MasterMindGameMVCPatternsId.distributed;
 
 import MasterMindGameMVCPatternsId.distributed.dispatchers.DispatcherPrototype;
+import MasterMindGameMVCPatternsId.models.DAO.SessionImplementationDAO;
+
 
 public class MastermindServer {
 
@@ -10,7 +12,7 @@ public class MastermindServer {
 
     private MastermindServer() {
         this.dispatcherPrototype = new DispatcherPrototype();
-        this.logic = new LogicImplementationServer();
+        this.logic = new LogicImplementationServer(new SessionImplementationDAO());
         this.logic.createDispatchers(this.dispatcherPrototype);
     }
 

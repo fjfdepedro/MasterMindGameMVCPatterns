@@ -5,11 +5,13 @@ import java.util.List;
 
 import MasterMindGameMVCPatternsId.types.Color;
 
-class ProposedCombination extends Combination {
+public class ProposedCombination extends Combination {
 
-	ProposedCombination(List<Color> colors) {
+	public ProposedCombination(List<Color> colors) {
 		this.colors = colors;
 	}
+
+	public ProposedCombination() {}
 
 	boolean contains(Color color, int position) {
 		return this.colors.get(position) == color;
@@ -31,5 +33,11 @@ class ProposedCombination extends Combination {
 		}
 		return new ProposedCombination(colors);
 	}
+
+	@Override
+	public String toString() {
+		return "ProposedCombination [colors=" + colors + "]";
+	}
+
 
 }

@@ -5,7 +5,7 @@ import MasterMindGameMVCPatternsId.views.MessageView;
 
 public class UndoCommand extends Command {
 
-    UndoCommand(PlayController playController) {
+    public UndoCommand(PlayController playController) {
         super(MessageView.UNDO_COMMAND.getMessage(), playController);
     }
 

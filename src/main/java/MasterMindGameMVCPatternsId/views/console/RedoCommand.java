@@ -3,9 +3,9 @@ package MasterMindGameMVCPatternsId.views.console;
 import MasterMindGameMVCPatternsId.controllers.PlayController;
 import MasterMindGameMVCPatternsId.views.MessageView;
 
-class RedoCommand extends Command{
+public class RedoCommand extends Command{
 
-    RedoCommand(PlayController playController) {
+    public RedoCommand(PlayController playController) {
         super(MessageView.REDO_COMMAND.getMessage(), playController);
     }
 

@@ -9,7 +9,7 @@ class ErrorView extends MasterMindGameMVCPatternsId.views.ErrorView {
 		super(error);
 	}
 	
-	void writeln() {
+	public void writeln() {
 		new Console().writeln(ErrorView.MESSAGES[this.error.ordinal()]);
 	}	
 

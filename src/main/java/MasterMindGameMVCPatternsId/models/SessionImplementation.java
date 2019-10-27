@@ -11,6 +11,9 @@ public class SessionImplementation implements Session {
 
     private Registry registry;
 
+    private String name;
+
+
     public SessionImplementation() {
         this.state = new State();
         this.game = new Game();
@@ -72,9 +75,40 @@ public class SessionImplementation implements Session {
         return this.game.getWhites(position);
     }
 
+    public boolean hasName() {
+        return this.name != null;
+    }
+
+    public Game getGame() {
+        return this.game;
+    }
+
+    public void registry() {
+        this.registry = new Registry(this.game);
+    }
+
+    public void resetRegistry() {
+        this.registry.reset();
+    }
+
+    public void setStateValue(StateValue stateValue) {
+        this.state.setStateValue(stateValue);
+    }
+
+
     @Override
     public int getWidth() {
         return this.game.getWidth();
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
